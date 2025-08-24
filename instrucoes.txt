@@ -1,0 +1,98 @@
+========================================
+ACADEMIC HARVESTER - INSTRUÇÕES DE INSTALAÇÃO
+========================================
+
+Este guia explica como instalar e executar o Academic Harvester no Windows.
+
+PRÉ-REQUISITOS:
+- Windows 10 ou superior
+- Conexão com a internet
+- Python 3.10 ou superior (se não tiver, baixe em python.org)
+
+PASSO A PASSO:
+
+1. INSTALAR PYTHON (se necessário)
+   - Acesse https://www.python.org/downloads/
+   - Baixe Python 3.10 ou superior
+   - Durante a instalação, MARQUE a opção "Add Python to PATH"
+   - Clique em "Install Now"
+
+2. PREPARAR A PASTA DO PROJETO
+   - Extraia todos os arquivos para uma pasta de sua escolha
+   - Exemplo: C:\academic_harvester
+
+3. ABRIR O PROMPT DE COMANDO
+   - Pressione Windows + R
+   - Digite "cmd" e pressione Enter
+   - Navegue até a pasta do projeto:
+     cd C:\academic_harvester
+
+4. CRIAR AMBIENTE VIRTUAL
+   No prompt de comando, digite:
+   python -m venv venv
+
+5. ATIVAR O AMBIENTE VIRTUAL
+   Digite:
+   venv\Scripts\activate
+
+6. INSTALAR DEPENDÊNCIAS
+   Com o ambiente virtual ativado, digite:
+   pip install -r requirements.txt
+
+7. EXECUTAR O PROGRAMA
+   - Opção 1: Dê duplo clique no arquivo "iniciar.bat"
+   - Opção 2: No prompt com ambiente ativado, digite:
+     streamlit run app.py
+
+SOLUÇÃO DE PROBLEMAS:
+
+Problema: "Python não é reconhecido como comando"
+Solução: Reinstale Python marcando "Add Python to PATH"
+
+Problema: Erro ao instalar dependências
+Solução: Atualize o pip com: python -m pip install --upgrade pip
+
+Problema: Navegador não abre automaticamente
+Solução: Acesse manualmente http://localhost:8501
+
+COMO USAR:
+
+1. O programa abrirá no seu navegador
+2. Escolha o tipo de busca (Autor, Título ou Palavra-chave)
+3. Digite o termo de busca
+4. Selecione a fonte de dados (CrossRef ou OpenAlex)
+5. Ajuste o ano inicial (From Year) para filtrar publicações antigas
+6. Clique em "⚙️ Advanced Options" para mais opções:
+   - Marque "Open Access Only" para ver apenas publicações de acesso aberto
+   - Ajuste "Maximum Results" (10 a 5000, padrão 100)
+7. Clique em "Search"
+8. Aguarde - buscas grandes podem demorar:
+   - 100 resultados: ~10 segundos
+   - 1000 resultados: ~2 minutos
+   - 5000 resultados: ~10 minutos
+9. Os resultados aparecerão na tela
+10. Use "Export to Excel" para salvar os resultados
+
+OBSERVAÇÕES:
+
+- Os arquivos Excel são salvos em: data\resultados\
+- O nome do arquivo começa com "tainacan_import_" para fácil identificação
+- CrossRef é melhor para publicações tradicionais
+- OpenAlex é mais rápido e fornece contagem de citações
+- A primeira busca pode demorar um pouco
+- Para importar no Tainacan, use a aba "Importar_Tainacan" do Excel
+- O sistema remove automaticamente publicações duplicadas
+- Máximo de 5000 publicações por busca
+
+DICAS PARA GRANDES BUSCAS:
+
+- Use OpenAlex para buscas com mais de 500 resultados (mais rápido)
+- Ative "Open Access Only" para reduzir o volume
+- Seja específico nos termos de busca
+- Use aspas para nomes exatos: "João Silva"
+- Para instituições, use o nome completo
+- Monitore o progresso no console (aparece "Fetched X results...")
+
+Para suporte ou dúvidas, verifique a documentação do projeto.
+
+Para suporte ou dúvidas, verifique a documentação do projeto.
